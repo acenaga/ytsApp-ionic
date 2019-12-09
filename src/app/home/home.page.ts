@@ -1,12 +1,42 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MovieService } from '../services/movie.service';
+import { IonInfiniteScroll } from '@ionic/angular';
+import { Movie } from '../interface/interfaces';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
 
-  constructor() {}
+
+  movies: Movie[] = [];
+
+  constructor( private movieService: MovieService ) {}
+
+  ngOnInit() {
+    this.cargarMovies();
+  }
+
+  cargarMovies( event? ) {
+
+    this.movieService.getTopMoviesPages()
+      .subscribe(resp => {
+        console.log('Datos', resp)
+
+        if ( resp.movies.length === 0 ) {
+          event.target.disabled = true;
+        }
+
+        this.movies.push(...resp.movies);
+
+        if ( event ) {
+          event.target.complete();
+        }
+
+      });
+
+  }
 
 }

@@ -1,5 +1,7 @@
 {
   "name": "ytsApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

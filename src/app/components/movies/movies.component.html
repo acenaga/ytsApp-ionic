@@ -1,0 +1,14 @@
+<ion-grid>
+
+  <ion-row>
+
+    <ion-col *ngFor="let movie of movies, let i = index">
+      <app-movie [movie]="movie"
+      [i]=i
+      ></app-movie>
+
+    </ion-col>
+
+  </ion-row>
+
+</ion-grid>

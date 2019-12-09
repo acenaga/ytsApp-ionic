@@ -1,0 +1,27 @@
+<ion-card color="dark" >
+    <ion-card-header>
+      <ion-card-subtitle>
+        <span class="text-primary">{{ i + 1 }}. </span>
+        <span class="noticia-source-name">{{ movie.title }}</span>
+  
+        <div class="noticia-more">
+          <ion-button fill="clear">
+            <ion-icon slot="icon-only"
+                      name="more">
+            </ion-icon>
+          </ion-button>
+        </div>
+  
+      </ion-card-subtitle>
+      <ion-card-title>{{ movie.title }}</ion-card-title>
+    </ion-card-header>
+    <ion-img  *ngIf="movie.small_cover_image"
+              [src]="movie.small_cover_image">
+    </ion-img>
+    <ion-card-content>
+      <p>
+        {{ movie.description_full }}
+      </p>
+    </ion-card-content>
+  
+    </ion-card>
