@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Data } from '../interface/interfaces';
+import { Data, Movie } from '../interface/interfaces';
 
 
 
@@ -30,7 +30,7 @@ export class MovieService {
 
     this.headMoviesPage++;
 
-    return this.ejecutarQuery<Data>(`/list_movies.json`);
+    return this.ejecutarQuery<Movie>(`/list_movies.json`);
 
   }
 }
