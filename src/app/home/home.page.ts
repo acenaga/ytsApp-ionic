@@ -22,10 +22,14 @@ export class HomePage implements OnInit {
 
     this.movieService.getTopMoviesPages()
       .subscribe(resp => {
+        console.log('Datos', resp);
+
         if ( resp.data.movies.length === 0 ) {
           event.target.disabled = true;
         }
+
         this.movies.push(...resp.data.movies);
+
         if ( event ) {
           event.target.complete();
         }
