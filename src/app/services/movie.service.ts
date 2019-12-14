@@ -30,11 +30,7 @@ export class MovieService {
 
     this.headMoviesPage++;
 
-<<<<<<< HEAD
     return this.ejecutarQuery<RootObject>(`/list_movies.json`);
-=======
-    return this.ejecutarQuery<Movie>(`/list_movies.json`);
->>>>>>> 84c91041229cac5ebfc8375ad6a75b72ed770158
 
   }
 }
