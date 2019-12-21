@@ -18,6 +18,12 @@ export class HomePage implements OnInit {
     this.cargarMovies();
   }
 
+  loadData( event ) {
+
+    this.cargarMovies( event );
+
+  }
+
   cargarMovies( event? ) {
 
     this.movieService.getTopMoviesPages()
